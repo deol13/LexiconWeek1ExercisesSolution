@@ -113,7 +113,7 @@ namespace LexiconWeek1Exercises
 
                 if(radius > 0)
                 {
-                    Console.WriteLine("Cirlce Area: " + (2 * Math.PI * Math.Pow(radius, 2)));
+                    Console.WriteLine("Cirlce Area: " + (Math.PI * Math.Pow(radius, 2)));
                     Console.WriteLine("Cirlce Volume: " + (4 * Math.PI * Math.Pow(radius, 3))/3 );
                 }
                 else
@@ -406,7 +406,12 @@ namespace LexiconWeek1Exercises
             } while (inputValue != -1);
             
         }
-        private static void RunExercisefifteen()
+        
+        private static void RunExerciseFifteen()
+        {
+
+        }
+        private static void RunExerciseSixteen()
         {
 
         }
