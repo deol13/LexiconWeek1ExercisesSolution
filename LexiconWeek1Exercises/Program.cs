@@ -4,14 +4,19 @@ namespace LexiconWeek1Exercises
 {
     public partial class Program
     {
+        static ConsoleColor forgroundColorUsed = ConsoleColor.Magenta;
+
         static void Main(string[] args)
         {
             bool isAlive = true;
 
+            
             while (isAlive)
             {
                 try
                 {
+                    changeForgroundColor();
+
                     Console.Write("Welcome to the menu for week 1 exercises!" +
                         "\n Enter exercise number (or 99 to exit): ");
 
@@ -57,6 +62,10 @@ namespace LexiconWeek1Exercises
                             Console.Clear();
                             RunExerciseNine();
                             break;
+                        case 10:
+                            Console.Clear();
+                            RunExerciseTen();
+                            break;
                         case 99:
                             Console.WriteLine("Thank you for trying my program!");
                             isAlive = false;
@@ -78,6 +87,11 @@ namespace LexiconWeek1Exercises
                     Console.ResetColor();
                 }
             }
+        }
+
+        static void changeForgroundColor()
+        {
+                Console.ForegroundColor = forgroundColorUsed;
         }
     }
 }

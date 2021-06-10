@@ -202,7 +202,62 @@ namespace LexiconWeek1Exercises
                 Console.ResetColor();
             }
         }
+
         private static void RunExerciseTen()
+        {
+            try
+            {
+                Console.Write("Choose between 1 to 3: ");
+                var choice = int.Parse(Console.ReadLine() ?? "");
+
+                switch (choice)
+                {
+                    case 1:
+                        Console.Write("Input a number: ");
+                        var firstNumber = int.Parse(Console.ReadLine() ?? "");
+                        Console.Write("Input another number: ");
+                        var secondNumber = int.Parse(Console.ReadLine() ?? "");
+                        if(secondNumber != 0)
+                        {
+                            Console.WriteLine(firstNumber/secondNumber);
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Error: denominator is 0");
+                            Console.ResetColor();
+                        }
+                        break;
+                    case 2:
+                        RunExerciseFour();
+                        break;
+                    case 3:
+                        if(forgroundColorUsed == ConsoleColor.Magenta)
+                        {
+                            forgroundColorUsed = ConsoleColor.Cyan;
+                        }
+                        else
+                        {
+                            forgroundColorUsed = ConsoleColor.Magenta;
+                        }
+                        
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"{choice} is not an available option!");
+                        Console.ResetColor();
+                        break;
+                }
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Either input isn't a number!");
+                Console.ResetColor();
+            }
+        }
+
+        private static void RunExerciseEleven()
         {
 
         }
