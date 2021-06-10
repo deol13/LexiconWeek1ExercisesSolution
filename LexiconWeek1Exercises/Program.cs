@@ -12,17 +12,11 @@ namespace LexiconWeek1Exercises
             {
                 try
                 {
-                    Console.WriteLine("Welcome to the menu for week 1 exercises!" +
-                        "\n 1: My first and last name" +
-                        "\n 2: Yesterday, today and tomorrows date" +
-                        "\n 3: " +
-                        "\n 4: " +
-                        "\n 5: " +
-                        "\n 5: " +
-                        "\n 6: " +
-                        "\n 99: Exit");
+                    Console.Write("Welcome to the menu for week 1 exercises!" +
+                        "\n Enter exercise number (or 99 to exit): ");
 
-                    int.TryParse(Console.ReadLine(), out int exerciseChoice);
+                    var exerciseChoice = int.Parse(Console.ReadLine() ?? "");
+                    //int.TryParse(Console.ReadLine(), out int exerciseChoice);
                     Console.ForegroundColor = ConsoleColor.Green;
 
                     switch (exerciseChoice)
@@ -37,12 +31,15 @@ namespace LexiconWeek1Exercises
                             break;
                         case 3:
                             Console.Clear();
+                            RunExerciseThree();
                             break;
                         case 4:
                             Console.Clear();
+                            RunExerciseFour();
                             break;
                         case 5:
                             Console.Clear();
+                            RunExerciseFive();
                             break;
                         case 6:
                             Console.Clear();
