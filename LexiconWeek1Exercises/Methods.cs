@@ -38,6 +38,7 @@ namespace LexiconWeek1Exercises
 
             Console.WriteLine(usersFirstName + ' ' + usersLasteName);
         }
+
         private static void RunExerciseFour()
         {
             string str = "The quick fox Jumped Over the DOG";
@@ -133,7 +134,19 @@ namespace LexiconWeek1Exercises
 
         private static void RunExerciseEight()
         {
+            try
+            {
+                Console.Write("Input a decimal number: ");
+                var usersDecimalNumber = double.Parse(Console.ReadLine() ?? "");
 
+                Console.WriteLine("Square root: " + Math.Sqrt(usersDecimalNumber));
+                Console.WriteLine("Power of 2: " + Math.Pow(usersDecimalNumber, 2));
+                Console.WriteLine("Power of 10: " + Math.Pow(usersDecimalNumber, 10));
+            }
+            catch
+            {
+
+            }
         } 
         private static void RunExercisenine()
         {
