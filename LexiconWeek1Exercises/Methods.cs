@@ -324,6 +324,56 @@ namespace LexiconWeek1Exercises
         }
         private static void RunExerciseThirteen()
         {
+            Random rnd = new Random();
+
+            int randValue = rnd.Next(1, 501);
+            int guessedValue = 0;
+            int count = 0;
+            bool isAlive = true;
+
+            while(isAlive)
+            {
+                Console.ResetColor();
+                Console.Write("Guess a number between 1 and 500: ");
+                
+                if(int.TryParse(Console.ReadLine(), out guessedValue))
+                {
+                    if(guessedValue != randValue)
+                    {
+                        if(guessedValue > randValue)
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine("Guess a lower number!");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.WriteLine("Guess a larger number!");
+                            Console.ResetColor();
+                        }
+                        count++;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Congratulations, you guessed correctly!" +
+                            $" It took you {count} tries.");
+                        Console.ResetColor();
+                        isAlive = false;
+                    }
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: the number needs to be above 0!");
+                    Console.ResetColor();
+                }
+            }
+        }
+
+        private static void RunExerciseFourteen()
+        {
 
         }
     }
