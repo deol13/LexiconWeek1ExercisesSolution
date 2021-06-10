@@ -259,6 +259,56 @@ namespace LexiconWeek1Exercises
 
         private static void RunExerciseEleven()
         {
+            try
+            {
+                Console.Write("Input an integer(aka a number above 0 thats not a decimal): ");
+                var number = int.Parse(Console.ReadLine() ?? "");
+
+                if(number > 0)
+                {
+                    for(int i = 0; i <= number; i++)
+                    {
+                        if(i % 2 == 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        }
+                        Console.WriteLine(i);
+                    }
+                    Console.WriteLine("--------------------------");
+                    for(int i = number; i >= 0; i--)
+                    {
+                        if (i % 2 == 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        }
+                        Console.WriteLine(i);
+                    }
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: the number needs to be above 0!");
+                    Console.ResetColor();
+                }
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Not a number!");
+                Console.ResetColor();
+            }
+        }
+
+        private static void RunExerciseTwelve()
+        {
 
         }
     }
