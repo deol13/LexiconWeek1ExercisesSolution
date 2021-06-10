@@ -374,6 +374,40 @@ namespace LexiconWeek1Exercises
 
         private static void RunExerciseFourteen()
         {
+            int inputValue = 0;
+            int sum = 0;
+            int count = 0;
+
+            //We use a do while there because the user needs input something before the loop can even exit
+            do
+            {
+                Console.Write("Input a number (input -1 to stop the loop): ");
+                if (int.TryParse(Console.ReadLine(), out inputValue))
+                {
+                    if(inputValue != -1)
+                    {
+                        sum += inputValue;
+                        count++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sum of the numbers inputted: " + sum);
+                        Console.WriteLine("Average of the numbers inputted: " + sum/count);
+                    }
+                          
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: not a number!");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+
+            } while (inputValue != -1);
+            
+        }
+        private static void RunExercisefifteen()
+        {
 
         }
     }
