@@ -18,15 +18,14 @@ namespace LexiconWeek1Exercises
         {
             //Get todays date with DateTime.Now then we remove the time by uisng .date on our variable
             DateTime todaysDate = DateTime.Now;
-            todaysDate = todaysDate.Date;
             //Then we get yesterdays date by using AddDays with an negativ 1 as argument
             //And tomorrows by using a positiv 1 as an argument
             DateTime yesterdaysDate = todaysDate.AddDays(-1);
             DateTime tomorrowsDate = todaysDate.AddDays(1);
 
-            Console.WriteLine($"Todays date is {todaysDate.ToString("d")}");
-            Console.WriteLine($"Tomorrows date is {tomorrowsDate.ToString("d")}");
-            Console.WriteLine($"Yesterdays date was {yesterdaysDate.ToString("d")}");
+            Console.WriteLine($"Todays date is {todaysDate::d}");
+            Console.WriteLine($"Tomorrows date is {tomorrowsDate::d}");
+            Console.WriteLine($"Yesterdays date was {yesterdaysDate::d}");
         }
 
         private static void RunExerciseThree()
@@ -145,10 +144,65 @@ namespace LexiconWeek1Exercises
             }
             catch
             {
-
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Either input isn't a number!");
+                Console.ResetColor();
             }
         } 
-        private static void RunExercisenine()
+
+        private static void RunExerciseNine()
+        {
+            Console.Write("Input your name: ");
+            string name = Console.ReadLine();
+
+            try
+            {
+                Console.Write($"Hello {name} input your birth year (f.ex: 1967): ");
+                var birthYear = int.Parse(Console.ReadLine() ?? "");
+
+                int age = DateTime.Now.Year - birthYear;
+
+                if(age >= 18)
+                {
+                    Console.Write("Do you want order a beer?: ");
+                    if(Console.ReadLine().ToLower() == "yes")
+                    {
+                        Console.WriteLine("A beer has been ordered!");
+                    }
+                    else
+                    {
+                        Console.Write("Do you want a coke instead?: ");
+                        if (Console.ReadLine().ToLower() == "yes" )
+                        {
+                            Console.WriteLine("A coke has been served!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("There are no more options available!");
+                        }
+                    }
+                }
+                else
+                {
+                    Console.Write("Do you want to order a coke?: ");
+                    if (Console.ReadLine().ToLower() == "yes")
+                    {
+                        Console.WriteLine("A coke has been served!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("There are no more options available!");
+                    }
+                }
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Either input isn't a number!");
+                Console.ResetColor();
+            }
+        }
+        private static void RunExerciseTen()
         {
 
         }

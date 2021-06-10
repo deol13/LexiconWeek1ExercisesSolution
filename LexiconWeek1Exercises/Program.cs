@@ -53,6 +53,10 @@ namespace LexiconWeek1Exercises
                             Console.Clear();
                             RunExerciseEight();
                             break;
+                        case 9:
+                            Console.Clear();
+                            RunExerciseNine();
+                            break;
                         case 99:
                             Console.WriteLine("Thank you for trying my program!");
                             isAlive = false;
