@@ -13,8 +13,8 @@ namespace LexiconWeek1Exercises
                 try
                 {
                     Console.WriteLine("Welcome to the menu for week 1 exercises!" +
-                        "\n 1: " +
-                        "\n 2: " +
+                        "\n 1: My first and last name" +
+                        "\n 2: Yesterday, today and tomorrows date" +
                         "\n 3: " +
                         "\n 4: " +
                         "\n 5: " +

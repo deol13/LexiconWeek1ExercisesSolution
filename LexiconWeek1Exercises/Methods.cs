@@ -8,12 +8,24 @@ namespace LexiconWeek1Exercises
     {
         private static void RunExerciseOne()
         {
-            Console.WriteLine("You successfully ran exercise one!");
+            string firstName = "Dennis";
+            string lastName = "Olsen";
+
+            Console.WriteLine("Hello {0} {1}! I'm glad to inform you that you are the test subject of my very first assignment!", firstName, lastName);
         }
 
         private static void RunExerciseTwo()
         {
-            Console.WriteLine("You successfully ran exercise two!");
+            
+            DateTime todaysDate = DateTime.Now;
+            todaysDate = todaysDate.Date;
+            DateTime yesterdaysDate = todaysDate.AddDays(-1);
+            DateTime tomorrowsDate = todaysDate.AddDays(1);
+
+            Console.WriteLine($"Todays date is {todaysDate.ToString("d")}");
+            Console.WriteLine($"Tomorrows date is {tomorrowsDate.ToString("d")}");
+            Console.WriteLine($"Yesterdays date was {yesterdaysDate.ToString("d")}");
         }
+
     }
 }
