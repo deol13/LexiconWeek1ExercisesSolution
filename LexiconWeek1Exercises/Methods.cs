@@ -266,6 +266,9 @@ namespace LexiconWeek1Exercises
 
                 if(number > 0)
                 {
+                    //Loop out the numbers 0 to number in the first loop
+                    //Then reversed in the second loop
+                    //Change color to red if the number can be divided by 2
                     for(int i = 0; i <= number; i++)
                     {
                         if(i % 2 == 0)
@@ -308,6 +311,18 @@ namespace LexiconWeek1Exercises
         }
 
         private static void RunExerciseTwelve()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine("\n");
+
+                for (int j = 1; j <= 10; j++)
+                {
+                    Console.Write(i * j + "\t");
+                }
+            }
+        }
+        private static void RunExerciseThirteen()
         {
 
         }
