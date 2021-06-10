@@ -43,6 +43,15 @@ namespace LexiconWeek1Exercises
                             break;
                         case 6:
                             Console.Clear();
+                            RunExerciseSix();
+                            break;
+                        case 7:
+                            Console.Clear();
+                            RunExerciseSeven();
+                            break;
+                        case 8:
+                            Console.Clear();
+                            RunExerciseEight();
                             break;
                         case 99:
                             Console.WriteLine("Thank you for trying my program!");
