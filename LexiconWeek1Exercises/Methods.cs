@@ -447,7 +447,55 @@ namespace LexiconWeek1Exercises
             }
 
         }
+
+        //Ask for the integer and checks so it is an integer, then calls the recursive method.
         private static void RunExerciseSixteen()
+        {
+            try
+            {
+                Console.Write("Input an integer and the program will do a Fibonacchi series on it: ");
+                var fibonacchiNumber = int.Parse(Console.ReadLine() ?? "");
+
+                if(fibonacchiNumber > 0)
+                {
+                    RunExerciseSixteen(fibonacchiNumber, 0, 0, 1);
+                    Console.WriteLine("\n");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: The integer must be above 0!");
+                    Console.ResetColor();
+                }
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: not an integer!");
+                Console.ResetColor();
+            }
+        }
+
+        //Fibonacchi method, recursive
+        private static bool RunExerciseSixteen(int limit, int count, int firstNumber, int secondNumber)
+        {
+            Console.Write(firstNumber);
+            int tmp = firstNumber;
+            firstNumber = secondNumber;
+            secondNumber += tmp;
+            count++;
+            
+            if(limit == count)
+            {
+                return true;
+            }
+
+            Console.Write(", ");
+
+            return RunExerciseSixteen(limit, count, firstNumber, secondNumber);
+        }
+
+        private static void RunExerciseSeventeen()
         {
 
         }
