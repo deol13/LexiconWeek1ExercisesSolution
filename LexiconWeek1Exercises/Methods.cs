@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace LexiconWeek1Exercises
 {
@@ -80,7 +81,7 @@ namespace LexiconWeek1Exercises
             double firstNumber = 0.0, secondNumber = 0.0;
             //If it isn't a number, Parse will use "" which will trigger the catch
             Console.Write("Input a number:");
-            
+
             if (getADecimalFromUser(ref firstNumber))
             {
                 Console.Write("Input another number:");
@@ -133,7 +134,7 @@ namespace LexiconWeek1Exercises
                 Console.WriteLine("Power of 2: " + Math.Pow(usersDecimalNumber, 2));
                 Console.WriteLine("Power of 10: " + Math.Pow(usersDecimalNumber, 10));
             }
-        } 
+        }
 
         private static void RunExerciseNine()
         {
@@ -299,16 +300,16 @@ namespace LexiconWeek1Exercises
             int count = 0;
             bool isAlive = true;
 
-            while(isAlive)
+            while (isAlive)
             {
                 Console.ResetColor();
                 Console.Write("Guess a number between 1 and 500: ");
-                
-                if(int.TryParse(Console.ReadLine(), out guessedValue))
+
+                if (int.TryParse(Console.ReadLine(), out guessedValue))
                 {
-                    if(guessedValue != randValue)
+                    if (guessedValue != randValue)
                     {
-                        if(guessedValue > randValue)
+                        if (guessedValue > randValue)
                         {
                             Console.ForegroundColor = ConsoleColor.DarkRed;
                             Console.WriteLine("Guess a lower number!");
@@ -352,7 +353,7 @@ namespace LexiconWeek1Exercises
                 Console.Write("Input a number (input -1 to stop the loop): ");
                 if (int.TryParse(Console.ReadLine(), out inputValue))
                 {
-                    if(inputValue != -1)
+                    if (inputValue != -1)
                     {
                         sum += inputValue;
                         count++;
@@ -360,9 +361,9 @@ namespace LexiconWeek1Exercises
                     else
                     {
                         Console.WriteLine("Sum of the numbers inputted: " + sum);
-                        Console.WriteLine("Average of the numbers inputted: " + sum/count);
+                        Console.WriteLine("Average of the numbers inputted: " + sum / count);
                     }
-                          
+
                 }
                 else
                 {
@@ -372,9 +373,10 @@ namespace LexiconWeek1Exercises
                 }
 
             } while (inputValue != -1);
-            
+
         }
-        
+
+        //Look at Exercise 15 option 2 in the pdf and do that option
         private static void RunExerciseFifteen()
         {
             bool isAlive = true;
@@ -384,10 +386,10 @@ namespace LexiconWeek1Exercises
 
             Console.Write("Input an integer: ");
 
-            if(getAnIntegerFromUser(ref number))
+            if (getAnIntegerFromUser(ref number))
             {
-                if(number != 0)
-                { 
+                if (number != 0)
+                {
                     if (number < 0) { number *= -1; }
                     stop = number / 2;
 
@@ -442,8 +444,8 @@ namespace LexiconWeek1Exercises
             firstNumber = secondNumber;
             secondNumber += tmp;
             count++;
-            
-            if(limit == count)
+
+            if (limit == count)
             {
                 return true;
             }
@@ -455,9 +457,51 @@ namespace LexiconWeek1Exercises
 
         private static void RunExerciseSeventeen()
         {
+            Console.WriteLine("Type in a palindrome, only the alphabetic letters a-ö is accepted!");
+            string input = Console.ReadLine();
 
+            string[] inputArray = input.Split();
+            bool continueOn = true;
+
+            for (int i = 0; i < inputArray.Length; i++)
+            {
+                if (inputArray[i].Any(x => !char.IsLetter(x)))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: Contains something other than alphabetic letters!");
+                    Console.ResetColor();
+
+                    continueOn = false;
+                    break;
+                }
+            }
+
+            if (continueOn)
+            {
+                string palindrome = "";
+                string[] tmp = input.Split(' ');
+                for (int i = 0; i < tmp.Length; i++)
+                {
+                    palindrome += tmp[i].ToString();
+                }
+
+                palindrome = palindrome.ToLower();
+
+                if (palindrome.SequenceEqual(palindrome.Reverse()))
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"{input} is a palindrome");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"{input} is not a palindrome");
+                    Console.ResetColor();
+                }
+            }
         }
-    
+
         private static void RunExerciseEighteen()
         {
 
