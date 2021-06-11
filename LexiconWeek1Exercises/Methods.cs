@@ -386,8 +386,9 @@ namespace LexiconWeek1Exercises
 
             if(getAnIntegerFromUser(ref number))
             {
-                if (number > 0)
-                {
+                if(number != 0)
+                { 
+                    if (number < 0) { number *= -1; }
                     stop = number / 2;
 
                     while (isAlive)
@@ -407,12 +408,6 @@ namespace LexiconWeek1Exercises
                             current++;
                         }
                     }
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Error: No negativ integers!");
-                    Console.ResetColor();
                 }
             }
         }
