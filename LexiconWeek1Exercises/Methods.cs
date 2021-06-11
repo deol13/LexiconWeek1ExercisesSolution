@@ -671,7 +671,7 @@ namespace LexiconWeek1Exercises
                 int result = firstValue / secondValue;
                 Console.WriteLine("Result: " + result);
             }
-            catch
+            catch(DivideByZeroException) 
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Error: You tried to divide by 0!");
@@ -679,6 +679,7 @@ namespace LexiconWeek1Exercises
             }
 
         }
+
         private static void RunExerciseTwentysix()
         {
 
@@ -743,12 +744,19 @@ namespace LexiconWeek1Exercises
                     input = int.Parse(Console.ReadLine() ?? "");
                     continueUntilValidInteger = true;
                 }
-                catch
+                catch(FormatException)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Error: Not an integer, try again!");
                     Console.ForegroundColor = ConsoleColor.Green;
                 }
+                catch(ArgumentNullException)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: Nothing inputted, try again!");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+
             } while (!continueUntilValidInteger);
 
             return input;
