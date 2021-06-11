@@ -409,6 +409,42 @@ namespace LexiconWeek1Exercises
         
         private static void RunExerciseFifteen()
         {
+            bool isAlive = true;
+            int current = 1;
+            int stop = 0;
+
+            try
+            {
+                Console.Write("Input an integer: ");
+                var number = int.Parse(Console.ReadLine() ?? "");
+
+                stop = number / 2;
+
+                while (isAlive)
+                {
+                    if (number % current == 0)
+                    {
+                        Console.Write(current + " ");
+                    }
+                    
+                    if(current >= stop)
+                    {
+                        isAlive = false;
+                        Console.WriteLine("\n");
+                    }
+                    else
+                    {
+                        current++;
+                    }
+                }
+
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Not a number!");
+                Console.ResetColor();
+            }
 
         }
         private static void RunExerciseSixteen()
