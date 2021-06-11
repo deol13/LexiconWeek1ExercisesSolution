@@ -585,7 +585,10 @@ namespace LexiconWeek1Exercises
             {
                 Console.Write($"{item} ");
             }
-
+            //We got 2 index variables, one that begins with 0 and the other with firstArrays size
+            //When the loop finds a even number it will use the one that begins at the end and the index till decrease after each one
+            //while if the loops finds an odd number it will use first one and that one will increase with each use
+            //This way we only need to loop through the firstArray once
             for (int i = 0; i < firstArray.Length; i++)
             {
                 if(firstArray[i] % 2 == 0)
@@ -606,7 +609,32 @@ namespace LexiconWeek1Exercises
                 Console.Write($"{item} ");
             }
         }
-        private static void RunExerciseTwentyOne()
+
+        private static void RunExerciseTwentyone()
+        {
+            try
+            {
+                Console.WriteLine("Input a string of numbers and use a comma to separate them");
+                string tmp = Console.ReadLine();
+                string[] stringArrayOfNumbers = tmp.Split(',');
+                int[] intArray = new int[stringArrayOfNumbers.Length];
+                for (int i = 0; i < stringArrayOfNumbers.Length; i++)
+                {
+                    intArray[i] = int.Parse(stringArrayOfNumbers[i] ?? "");
+                }
+                Console.WriteLine("Minimum value = " + intArray.Min());
+                Console.WriteLine("Maximum value = " + intArray.Max());
+                Console.WriteLine("Average value = " + intArray.Average());
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Not an integer!");
+                Console.ResetColor();
+            }
+        }
+
+        private static void RunExerciseTwentytwo()
         {
 
         }
