@@ -77,44 +77,40 @@ namespace LexiconWeek1Exercises
 
         private static void RunExerciseSix()
         {
+            double firstNumber = 0.0, secondNumber = 0.0;
             //If it isn't a number, Parse will use "" which will trigger the catch
-            try
+            Console.Write("Input a number:");
+            
+            if (getADecimalFromUser(ref firstNumber))
             {
-                Console.Write("Input a number:");
-                var firstNumber = double.Parse(Console.ReadLine() ?? "");
                 Console.Write("Input another number:");
-                var secondNumber = double.Parse(Console.ReadLine() ?? "");
-
-                //We use ?: operator to check which variable is larger and output that one on one line
-                Console.WriteLine(firstNumber > secondNumber ? $"Biggest: {firstNumber}" : $"Biggest: {secondNumber}");
-                //Samething but smallest of them
-                Console.WriteLine(firstNumber < secondNumber ? $"Smallest: {firstNumber}" : $"Smallest: {secondNumber}");
-                //Still use ?: to do the entire thing on one line
-                Console.WriteLine(firstNumber > secondNumber ? $"Difference: {firstNumber-secondNumber}" : $"Difference: {secondNumber- firstNumber}");
-                //
-                Console.WriteLine("Sum: " + (firstNumber + secondNumber));
-                Console.WriteLine("Product: " + firstNumber * secondNumber);
-                Console.WriteLine("Ratio: " + firstNumber / secondNumber);
-            }
-            catch
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Either input isn't a number!");
-                Console.ResetColor();
+                if (getADecimalFromUser(ref secondNumber))
+                {
+                    //We use ?: operator to check which variable is larger and output that one on one line
+                    Console.WriteLine(firstNumber > secondNumber ? $"Biggest: {firstNumber}" : $"Biggest: {secondNumber}");
+                    //Samething but smallest of them
+                    Console.WriteLine(firstNumber < secondNumber ? $"Smallest: {firstNumber}" : $"Smallest: {secondNumber}");
+                    //Still use ?: to do the entire thing on one line
+                    Console.WriteLine(firstNumber > secondNumber ? $"Difference: {firstNumber - secondNumber}" : $"Difference: {secondNumber - firstNumber}");
+                    //
+                    Console.WriteLine("Sum: " + (firstNumber + secondNumber));
+                    Console.WriteLine("Product: " + firstNumber * secondNumber);
+                    Console.WriteLine("Ratio: " + firstNumber / secondNumber);
+                }
             }
         }
 
         private static void RunExerciseSeven()
         {
-            try
-            {
-                Console.Write("Input a radius(positiv): ");
-                var radius = double.Parse(Console.ReadLine() ?? "");
+            double radius = 0.0;
 
-                if(radius > 0)
+            Console.Write("Input a radius(positiv): ");
+            if (getADecimalFromUser(ref radius))
+            {
+                if (radius > 0)
                 {
                     Console.WriteLine("Cirlce Area: " + (Math.PI * Math.Pow(radius, 2)));
-                    Console.WriteLine("Cirlce Volume: " + (4 * Math.PI * Math.Pow(radius, 3))/3 );
+                    Console.WriteLine("Cirlce Volume: " + (4 * Math.PI * Math.Pow(radius, 3)) / 3);
                 }
                 else
                 {
@@ -123,30 +119,19 @@ namespace LexiconWeek1Exercises
                     Console.ResetColor();
                 }
             }
-            catch
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Either input isn't a number!");
-                Console.ResetColor();
-            }
         }
 
         private static void RunExerciseEight()
         {
-            try
-            {
-                Console.Write("Input a decimal number: ");
-                var usersDecimalNumber = double.Parse(Console.ReadLine() ?? "");
+            double usersDecimalNumber = 0.0;
 
+            Console.Write("Input a decimal number: ");
+
+            if (getADecimalFromUser(ref usersDecimalNumber))
+            {
                 Console.WriteLine("Square root: " + Math.Sqrt(usersDecimalNumber));
                 Console.WriteLine("Power of 2: " + Math.Pow(usersDecimalNumber, 2));
                 Console.WriteLine("Power of 10: " + Math.Pow(usersDecimalNumber, 10));
-            }
-            catch
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Either input isn't a number!");
-                Console.ResetColor();
             }
         } 
 
@@ -155,24 +140,24 @@ namespace LexiconWeek1Exercises
             Console.Write("Input your name: ");
             string name = Console.ReadLine();
 
-            try
-            {
-                Console.Write($"Hello {name} input your birth year (f.ex: 1967): ");
-                var birthYear = int.Parse(Console.ReadLine() ?? "");
+            Console.Write($"Hello {name} input your birth year (f.ex: 1967): ");
+            int birthYear = 0;
 
+            if (getAnIntegerFromUser(ref birthYear))
+            {
                 int age = DateTime.Now.Year - birthYear;
 
-                if(age >= 18)
+                if (age >= 18)
                 {
                     Console.Write("Do you want order a beer?: ");
-                    if(Console.ReadLine().ToLower() == "yes")
+                    if (Console.ReadLine().ToLower() == "yes")
                     {
                         Console.WriteLine("A beer has been ordered!");
                     }
                     else
                     {
                         Console.Write("Do you want a coke instead?: ");
-                        if (Console.ReadLine().ToLower() == "yes" )
+                        if (Console.ReadLine().ToLower() == "yes")
                         {
                             Console.WriteLine("A coke has been served!");
                         }
@@ -195,21 +180,15 @@ namespace LexiconWeek1Exercises
                     }
                 }
             }
-            catch
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Either input isn't a number!");
-                Console.ResetColor();
-            }
         }
 
         private static void RunExerciseTen()
         {
-            try
-            {
-                Console.Write("Choose between 1 to 3: ");
-                var choice = int.Parse(Console.ReadLine() ?? "");
+            Console.Write("Choose between 1 to 3: ");
+            int choice = 0;
 
+            if (getAnIntegerFromUser(ref choice))
+            {
                 switch (choice)
                 {
                     case 1:
@@ -217,9 +196,9 @@ namespace LexiconWeek1Exercises
                         var firstNumber = int.Parse(Console.ReadLine() ?? "");
                         Console.Write("Input another number: ");
                         var secondNumber = int.Parse(Console.ReadLine() ?? "");
-                        if(secondNumber != 0)
+                        if (secondNumber != 0)
                         {
-                            Console.WriteLine(firstNumber/secondNumber);
+                            Console.WriteLine(firstNumber / secondNumber);
                         }
                         else
                         {
@@ -232,7 +211,7 @@ namespace LexiconWeek1Exercises
                         RunExerciseFour();
                         break;
                     case 3:
-                        if(forgroundColorUsed == ConsoleColor.Magenta)
+                        if (forgroundColorUsed == ConsoleColor.Magenta)
                         {
                             forgroundColorUsed = ConsoleColor.Cyan;
                         }
@@ -240,7 +219,7 @@ namespace LexiconWeek1Exercises
                         {
                             forgroundColorUsed = ConsoleColor.Magenta;
                         }
-                        
+
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -249,29 +228,24 @@ namespace LexiconWeek1Exercises
                         break;
                 }
             }
-            catch
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Either input isn't a number!");
-                Console.ResetColor();
-            }
         }
 
         private static void RunExerciseEleven()
         {
-            try
-            {
-                Console.Write("Input an integer(aka a number above 0 thats not a decimal): ");
-                var number = int.Parse(Console.ReadLine() ?? "");
+            Console.Write("Input an integer(aka a number above 0 thats not a decimal): ");
 
-                if(number > 0)
+            int number = 0;
+
+            if (getAnIntegerFromUser(ref number))
+            {
+                if (number > 0)
                 {
                     //Loop out the numbers 0 to number in the first loop
                     //Then reversed in the second loop
                     //Change color to red if the number can be divided by 2
-                    for(int i = 0; i <= number; i++)
+                    for (int i = 0; i <= number; i++)
                     {
-                        if(i % 2 == 0)
+                        if (i % 2 == 0)
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
                         }
@@ -282,7 +256,7 @@ namespace LexiconWeek1Exercises
                         Console.WriteLine(i);
                     }
                     Console.WriteLine("--------------------------");
-                    for(int i = number; i >= 0; i--)
+                    for (int i = number; i >= 0; i--)
                     {
                         if (i % 2 == 0)
                         {
@@ -301,12 +275,6 @@ namespace LexiconWeek1Exercises
                     Console.WriteLine("Error: the number needs to be above 0!");
                     Console.ResetColor();
                 }
-            }
-            catch
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error: Not a number!");
-                Console.ResetColor();
             }
         }
 
@@ -412,51 +380,52 @@ namespace LexiconWeek1Exercises
             bool isAlive = true;
             int current = 1;
             int stop = 0;
+            int number = 0;
 
-            try
+            Console.Write("Input an integer: ");
+
+            if(getAnIntegerFromUser(ref number))
             {
-                Console.Write("Input an integer: ");
-                var number = int.Parse(Console.ReadLine() ?? "");
-
-                stop = number / 2;
-
-                while (isAlive)
+                if (number > 0)
                 {
-                    if (number % current == 0)
+                    stop = number / 2;
+
+                    while (isAlive)
                     {
-                        Console.Write(current + " ");
-                    }
-                    
-                    if(current >= stop)
-                    {
-                        isAlive = false;
-                        Console.WriteLine("\n");
-                    }
-                    else
-                    {
-                        current++;
+                        if (number % current == 0)
+                        {
+                            Console.Write(current + " ");
+                        }
+
+                        if (current >= stop)
+                        {
+                            isAlive = false;
+                            Console.WriteLine("\n");
+                        }
+                        else
+                        {
+                            current++;
+                        }
                     }
                 }
-
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: No negativ integers!");
+                    Console.ResetColor();
+                }
             }
-            catch
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error: Not a number!");
-                Console.ResetColor();
-            }
-
         }
 
         //Ask for the integer and checks so it is an integer, then calls the recursive method.
         private static void RunExerciseSixteen()
         {
-            try
-            {
-                Console.Write("Input an integer and the program will do a Fibonacchi series on it: ");
-                var fibonacchiNumber = int.Parse(Console.ReadLine() ?? "");
+            Console.Write("Input an integer and the program will do a Fibonacchi series on it: ");
+            int fibonacchiNumber = 0;
 
-                if(fibonacchiNumber > 0)
+            if (getAnIntegerFromUser(ref fibonacchiNumber))
+            {
+                if (fibonacchiNumber > 0)
                 {
                     RunExerciseSixteen(fibonacchiNumber, 0, 0, 1);
                     Console.WriteLine("\n");
@@ -467,12 +436,6 @@ namespace LexiconWeek1Exercises
                     Console.WriteLine("Error: The integer must be above 0!");
                     Console.ResetColor();
                 }
-            }
-            catch
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error: not an integer!");
-                Console.ResetColor();
             }
         }
 
@@ -498,6 +461,49 @@ namespace LexiconWeek1Exercises
         private static void RunExerciseSeventeen()
         {
 
+        }
+    
+        private static void RunExerciseEighteen()
+        {
+
+        }
+
+        private static bool getAnIntegerFromUser(ref int value)
+        {
+            try
+            {
+                var number = int.Parse(Console.ReadLine() ?? "");
+                value = number;
+
+                return true;
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Not an integer!");
+                Console.ResetColor();
+            }
+
+            return false;
+        }
+
+        private static bool getADecimalFromUser(ref double value)
+        {
+            try
+            {
+                var number = double.Parse(Console.ReadLine() ?? "");
+                value = number;
+
+                return true;
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Not an integer!");
+                Console.ResetColor();
+            }
+
+            return false;
         }
     }
 }
