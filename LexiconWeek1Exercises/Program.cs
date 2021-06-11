@@ -93,6 +93,24 @@ namespace LexiconWeek1Exercises
                         case 22:
                             RunExerciseTwentytwo();
                             break;
+                        case 23:
+                            RunExerciseTwentythree();
+                            break;
+                        case 24:
+                            //RunExerciseTwentyfour();
+                            break;
+                        case 25:
+                            RunExerciseTwentyfive();
+                            break;
+                        case 26:
+                            //RunExerciseTwentysix();
+                            break;
+                        case 27:
+                            //RunExerciseTwentyseven();
+                            break;
+                        case 28:
+                            //RunExerciseTwentyeight();
+                            break;
                         case 99:
                             Console.WriteLine("Thank you for trying my program!");
                             isAlive = false;

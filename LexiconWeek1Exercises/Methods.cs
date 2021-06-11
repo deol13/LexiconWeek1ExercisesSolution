@@ -652,7 +652,42 @@ namespace LexiconWeek1Exercises
 
             Console.WriteLine(text);
         }
+
         private static void RunExerciseTwentythree()
+        {
+           
+        }
+        private static void RunExerciseTwentyfour()
+        {
+
+        }
+        private static void RunExerciseTwentyfive()
+        {
+            int firstValue = ExerciseTwentythreeErrorCatcher();
+            int secondValue = ExerciseTwentythreeErrorCatcher();
+
+            try
+            {
+                int result = firstValue / secondValue;
+                Console.WriteLine("Result: " + result);
+            }
+            catch
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: You tried to divide by 0!");
+                Console.ResetColor();
+            }
+
+        }
+        private static void RunExerciseTwentysix()
+        {
+
+        }
+        private static void RunExerciseTwentyseven()
+        {
+
+        }
+        private static void RunExerciseTwentyeight()
         {
 
         }
@@ -693,6 +728,30 @@ namespace LexiconWeek1Exercises
             }
 
             return false;
+        }
+
+        private static int ExerciseTwentythreeErrorCatcher()
+        {
+            bool continueUntilValidInteger = false;
+            var input = 0;
+
+            do
+            {
+                try
+                {
+                    Console.Write("Input an integer to stop the loop: ");
+                    input = int.Parse(Console.ReadLine() ?? "");
+                    continueUntilValidInteger = true;
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: Not an integer, try again!");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+            } while (!continueUntilValidInteger);
+
+            return input;
         }
     }
 }
