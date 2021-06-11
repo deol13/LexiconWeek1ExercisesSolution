@@ -113,6 +113,8 @@ namespace LexiconWeek1Exercises
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Not a valid exercise number!");
                     Console.ResetColor();
+                    Console.ReadKey();
+                    Console.Clear();
                 }
             }
         }
