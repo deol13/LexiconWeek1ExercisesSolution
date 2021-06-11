@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Reflection;
 
 namespace LexiconWeek1Exercises
 {
@@ -687,14 +689,113 @@ namespace LexiconWeek1Exercises
             Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86));
             Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.Cookies));
             Console.WriteLine(Environment.CurrentDirectory);
+            Console.WriteLine("\n");
+
+            var myFile = File.Create(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\exercise26File.txt");
+            Console.WriteLine(Path.GetFullPath("exercise26File.txt"));
+            myFile.Close();
         }
+
         private static void RunExerciseTwentyseven()
         {
+            try
+            {
+                using (StreamReader sr = new StreamReader("MyName.txt"))
+                {
+                    string line;
 
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+
+                    sr.Close();
+                }
+            }
+            catch (IOException)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Could not read file!");
+                Console.ResetColor();
+            }
         }
         private static void RunExerciseTwentyeight()
         {
+            string[] firstArray = { "Emily", "Anna", "Bella", "Matilda", "Hope" };
+            string[] secondArray = { "Joakim", "Martin", "Peter", "Bob", "Rock" };
 
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\exercise26File.txt";
+
+            try
+            {
+                if(!File.Exists(path))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: File doesn't exists, creates one!");
+                    Console.ResetColor();
+                }
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    foreach (var item in firstArray)
+                    {
+                        sw.WriteLine(item);
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Wrote to file!");
+                    Console.ResetColor();
+
+                    sw.Close();
+                }
+            }
+            catch (IOException)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Could not read file!");
+                Console.ResetColor();
+            }
+            catch(ArgumentNullException)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Path is null!");
+                Console.ResetColor();
+            }
+
+            try
+            {
+                if (!File.Exists(path))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: File doesn't exists, creates one!");
+                    Console.ResetColor();
+                }
+
+                using (StreamWriter sw = new StreamWriter(path, false))
+                {
+                    foreach (var item in secondArray)
+                    {
+                        sw.WriteLine(item);
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Wrote to file!");
+                    Console.ResetColor();
+
+                    sw.Close();
+                }
+            }
+            catch (IOException)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Could not create file!");
+                Console.ResetColor();
+            }
+            catch (ArgumentNullException)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Path is null!");
+                Console.ResetColor();
+            }
         }
 
         private static bool getAnIntegerFromUser(ref int value)

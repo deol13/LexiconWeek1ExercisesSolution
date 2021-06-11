@@ -106,10 +106,10 @@ namespace LexiconWeek1Exercises
                             RunExerciseTwentysix();
                             break;
                         case 27:
-                            //RunExerciseTwentyseven();
+                            RunExerciseTwentyseven();
                             break;
                         case 28:
-                            //RunExerciseTwentyeight();
+                            RunExerciseTwentyeight();
                             break;
                         case 99:
                             Console.WriteLine("Thank you for trying my program!");
