@@ -636,6 +636,24 @@ namespace LexiconWeek1Exercises
 
         private static void RunExerciseTwentytwo()
         {
+            string[] swearWords = { "fuck", "ass", "bitch", "bullshit", "cunt", "crap", "damn", "goddamn", "motherfucker", "shit", "slut", "whore"};
+            string[] replacementWords = { "Fluck", "buttocks", "beequeen", "nonsense", "cluck", "bam", "godbam", "piece", "poo", "wild", "wool" };
+
+            Console.WriteLine("Input as line of text");
+            string text = Console.ReadLine();
+
+            for (int i = 0; i < swearWords.Length; i++)
+            {
+                if(text.Contains(swearWords[i]))
+                {
+                    text = text.Replace(swearWords[i], replacementWords[i]);
+                }
+            }
+
+            Console.WriteLine(text);
+        }
+        private static void RunExerciseTwentythree()
+        {
 
         }
 
