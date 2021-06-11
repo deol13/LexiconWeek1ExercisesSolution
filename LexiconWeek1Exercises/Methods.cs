@@ -565,7 +565,48 @@ namespace LexiconWeek1Exercises
                 }
             }
         }
+
         private static void RunExerciseTwenty()
+        {
+            Random rnd = new Random();
+
+            int[] firstArray = new int[rnd.Next(10, 30)];
+            int[] secondArray = new int[firstArray.Length];
+            int oddIndex = 0;
+            int evenIndex = firstArray.Length-1;
+
+            for (int i = 0; i < firstArray.Length; i++)
+            {
+                firstArray[i] = rnd.Next(1, 101);
+                //secondArray[i] = 0;
+            }
+            Console.Write("Before: ");
+            foreach (var item in firstArray)
+            {
+                Console.Write($"{item} ");
+            }
+
+            for (int i = 0; i < firstArray.Length; i++)
+            {
+                if(firstArray[i] % 2 == 0)
+                {
+                    secondArray[evenIndex] = firstArray[i];
+                    evenIndex--;
+                }
+                else
+                {
+                    secondArray[oddIndex] = firstArray[i];
+                    oddIndex++;
+                }
+            }
+
+            Console.Write("\nAfter: ");
+            foreach (var item in secondArray)
+            {
+                Console.Write($"{item} ");
+            }
+        }
+        private static void RunExerciseTwentyOne()
         {
 
         }

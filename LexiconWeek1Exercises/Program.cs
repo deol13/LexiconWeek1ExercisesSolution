@@ -24,83 +24,68 @@ namespace LexiconWeek1Exercises
                     //int.TryParse(Console.ReadLine(), out int exerciseChoice);
                     Console.ForegroundColor = ConsoleColor.Green;
 
+                    Console.Clear();
                     switch (exerciseChoice)
                     {
                         case 1:
-                            Console.Clear();
                             RunExerciseOne();
                             break;
                         case 2:
-                            Console.Clear();
                             RunExerciseTwo();
                             break;
                         case 3:
-                            Console.Clear();
                             RunExerciseThree();
                             break;
                         case 4:
-                            Console.Clear();
                             RunExerciseFour();
                             break;
                         case 5:
-                            Console.Clear();
                             RunExerciseFive();
                             break;
                         case 6:
-                            Console.Clear();
                             RunExerciseSix();
                             break;
                         case 7:
-                            Console.Clear();
                             RunExerciseSeven();
                             break;
                         case 8:
-                            Console.Clear();
                             RunExerciseEight();
                             break;
                         case 9:
-                            Console.Clear();
                             RunExerciseNine();
                             break;
                         case 10:
-                            Console.Clear();
                             RunExerciseTen();
                             break;
                         case 11:
-                            Console.Clear();
                             RunExerciseEleven();
                             break;
                         case 12:
-                            Console.Clear();
                             RunExerciseTwelve();
                             break;
                         case 13:
-                            Console.Clear();
                             RunExerciseThirteen();
                             break;
                         case 14:
-                            Console.Clear();
                             RunExerciseFourteen();
                             break;
                         case 15:
-                            Console.Clear();
                             RunExerciseFifteen();
                             break;
                         case 16:
-                            Console.Clear();
                             RunExerciseSixteen();
                             break;
                         case 17:
-                            Console.Clear();
                             RunExerciseSeventeen();
                             break;
                         case 18:
-                            Console.Clear();
                             RunExerciseEighteen();
                             break;
-                        case 19:
-                            Console.Clear();
+                        case 19:;
                             RunExerciseNineteen();
+                            break;
+                        case 20:
+                            RunExerciseTwenty();
                             break;
                         case 99:
                             Console.WriteLine("Thank you for trying my program!");
@@ -111,6 +96,7 @@ namespace LexiconWeek1Exercises
                             Console.WriteLine("Not a valid exercise number!");
                             break;
                     }
+                    Console.WriteLine("\n");
                     Console.ResetColor();
                     Console.WriteLine("Hit any key to continue!");
                     Console.ReadKey();
