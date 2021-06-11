@@ -460,11 +460,16 @@ namespace LexiconWeek1Exercises
             Console.WriteLine("Type in a palindrome, only the alphabetic letters a-ö is accepted!");
             string input = Console.ReadLine();
 
+            //I split the input string so I can later check each char in it is an alphabetic letter
+            //If I just check the whole string at once it returns false if its white space in it.
+            //And it should contain white space if the user choose too.
             string[] inputArray = input.Split();
             bool continueOn = true;
 
+            //Here the proram loops through the array to check each index if its an alphabetic letter
             for (int i = 0; i < inputArray.Length; i++)
             {
+                //Its like a foreach, x is what contains in i index and  we check if its a letter with char.IsLetter
                 if (inputArray[i].Any(x => !char.IsLetter(x)))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -478,6 +483,7 @@ namespace LexiconWeek1Exercises
 
             if (continueOn)
             {
+                //The program splits to remove all whitespaces then remake the string without them
                 string palindrome = "";
                 string[] tmp = input.Split(' ');
                 for (int i = 0; i < tmp.Length; i++)
@@ -485,8 +491,10 @@ namespace LexiconWeek1Exercises
                     palindrome += tmp[i].ToString();
                 }
 
+                //Removes all uppercase
                 palindrome = palindrome.ToLower();
 
+                //Reverse the string and compares
                 if (palindrome.SequenceEqual(palindrome.Reverse()))
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
