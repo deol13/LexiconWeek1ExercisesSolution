@@ -94,6 +94,14 @@ namespace LexiconWeek1Exercises
                             Console.Clear();
                             RunExerciseSeventeen();
                             break;
+                        case 18:
+                            Console.Clear();
+                            RunExerciseEighteen();
+                            break;
+                        case 19:
+                            Console.Clear();
+                            RunExerciseNineteen();
+                            break;
                         case 99:
                             Console.WriteLine("Thank you for trying my program!");
                             isAlive = false;
@@ -116,6 +124,8 @@ namespace LexiconWeek1Exercises
                 }
             }
         }
+
+
 
         static void changeForgroundColor()
         {

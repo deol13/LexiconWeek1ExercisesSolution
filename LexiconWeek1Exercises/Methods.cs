@@ -512,6 +512,61 @@ namespace LexiconWeek1Exercises
 
         private static void RunExerciseEighteen()
         {
+            int[] intArray = new int[10];
+            Random rnd = new Random();
+
+            for (int i = 0; i < intArray.Length;  i++)
+            {
+                intArray[i] = rnd.Next(1, 101);
+            }
+
+            double[] doubleArray = new double[intArray.Length];
+
+            for (int i = 0; i < doubleArray.Length; i++)
+            {
+                doubleArray[i] = 1.0 / intArray[i];
+            }
+
+            foreach (var item in intArray)
+            {
+                Console.Write(item + "\t");
+            }
+            Console.WriteLine("\n");
+            foreach (var item in doubleArray)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void RunExerciseNineteen()
+        {
+            Random rnd = new Random();
+            int cost = rnd.Next(1, 1001);
+            int userPayed = 0;
+
+            Console.WriteLine("Money to pay: " + cost);
+            Console.Write("Enter the sum to pay: ");
+            getAnIntegerFromUser(ref userPayed);
+
+            int toPayBack = userPayed - cost;
+            int[] coins =  { 1, 5, 10, 20, 50, 100, 500, 1000 };
+            int[] cointsToPay = new int[coins.Length];
+
+            while(toPayBack > 0)
+            {
+                for (int i = coins.Length-1; i >= 0 ; i--)
+                {
+                    if (toPayBack / coins[i] != 0)
+                    {
+                        cointsToPay[i] = toPayBack / coins[i];
+                        toPayBack %= coins[i];
+                    }
+                    Console.WriteLine($"{coins[i]} coins = {cointsToPay[i]}");
+                }
+            }
+        }
+        private static void RunExerciseTwenty()
+        {
 
         }
 
