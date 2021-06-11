@@ -682,7 +682,11 @@ namespace LexiconWeek1Exercises
 
         private static void RunExerciseTwentysix()
         {
-
+            Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+            Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures));
+            Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86));
+            Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.Cookies));
+            Console.WriteLine(Environment.CurrentDirectory);
         }
         private static void RunExerciseTwentyseven()
         {

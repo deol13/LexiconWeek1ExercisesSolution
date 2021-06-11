@@ -103,7 +103,7 @@ namespace LexiconWeek1Exercises
                             RunExerciseTwentyfive();
                             break;
                         case 26:
-                            //RunExerciseTwentysix();
+                            RunExerciseTwentysix();
                             break;
                         case 27:
                             //RunExerciseTwentyseven();
